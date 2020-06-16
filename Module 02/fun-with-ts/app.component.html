@@ -1,0 +1,18 @@
+<input 
+#searchBox type="text" 
+(input)="setKeyword(searchBox.value)"
+[disabled]="isBusy"
+>
+<button 
+(click)="search()"
+[disabled]="isBusy"
+>Go</button>
+
+<img 
+*ngIf ="isBusy"
+src="https://miro.medium.com/max/1600/1*5ngZiNtGMrp_xmZHxSvJ0g.gif" alt="Girl in a jacket" width="500" height="600">
+
+
+<ul>
+  <li *ngFor="let res of results">{{res}}</li>
+</ul>
